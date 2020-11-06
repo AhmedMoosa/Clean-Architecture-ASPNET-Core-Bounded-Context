@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Demo.Users.Infrasturcture.Migrations
+namespace Demo.Users.Infrastructure.Migrations
 {
     public partial class initial : Migration
     {
@@ -53,6 +53,7 @@ namespace Demo.Users.Infrasturcture.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
+                schema: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -75,6 +76,7 @@ namespace Demo.Users.Infrasturcture.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
+                schema: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -97,6 +99,7 @@ namespace Demo.Users.Infrasturcture.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserLogins",
+                schema: "Users",
                 columns: table => new
                 {
                     LoginProvider = table.Column<string>(nullable: false),
@@ -118,6 +121,7 @@ namespace Demo.Users.Infrasturcture.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserRoles",
+                schema: "Users",
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
@@ -144,6 +148,7 @@ namespace Demo.Users.Infrasturcture.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetUserTokens",
+                schema: "Users",
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
@@ -165,22 +170,8 @@ namespace Demo.Users.Infrasturcture.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
+                schema: "Users",
                 table: "AspNetRoleClaims",
-                column: "RoleId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUserClaims_UserId",
-                table: "AspNetUserClaims",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUserLogins_UserId",
-                table: "AspNetUserLogins",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AspNetUserRoles_RoleId",
-                table: "AspNetUserRoles",
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
@@ -190,6 +181,24 @@ namespace Demo.Users.Infrasturcture.Migrations
                 column: "NormalizedName",
                 unique: true,
                 filter: "[NormalizedName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserClaims_UserId",
+                schema: "Users",
+                table: "AspNetUserClaims",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserLogins_UserId",
+                schema: "Users",
+                table: "AspNetUserLogins",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserRoles_RoleId",
+                schema: "Users",
+                table: "AspNetUserRoles",
+                column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
@@ -209,19 +218,24 @@ namespace Demo.Users.Infrasturcture.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AspNetRoleClaims");
+                name: "AspNetRoleClaims",
+                schema: "Users");
 
             migrationBuilder.DropTable(
-                name: "AspNetUserClaims");
+                name: "AspNetUserClaims",
+                schema: "Users");
 
             migrationBuilder.DropTable(
-                name: "AspNetUserLogins");
+                name: "AspNetUserLogins",
+                schema: "Users");
 
             migrationBuilder.DropTable(
-                name: "AspNetUserRoles");
+                name: "AspNetUserRoles",
+                schema: "Users");
 
             migrationBuilder.DropTable(
-                name: "AspNetUserTokens");
+                name: "AspNetUserTokens",
+                schema: "Users");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles",

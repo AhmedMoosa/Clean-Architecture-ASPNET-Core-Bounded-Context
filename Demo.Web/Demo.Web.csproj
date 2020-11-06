@@ -31,8 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Demo.Todo.Infrasturcture\Demo.Todo.Infrasturcture.csproj" />
-    <ProjectReference Include="..\Demo.Users.Infrasturcture\Demo.Users.Infrasturcture.csproj" />
+    <ProjectReference Include="..\Demo.Todo.Infrastructure\Demo.Todo.Infrastructure.csproj" />
+    <ProjectReference Include="..\Demo.Users.Infrastructure\Demo.Users.Infrastructure.csproj" />
     <ProjectReference Include="..\Demo.Web.Api\Demo.Web.Api.csproj" />
   </ItemGroup>
 

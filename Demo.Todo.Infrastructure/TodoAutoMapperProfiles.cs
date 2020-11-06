@@ -5,7 +5,7 @@ using System.Text;
 using Entities = Demo.Todo.Core.Entities;
 using DTOs = Demo.Todo.Core.DTOs;
 
-namespace Demo.Todo.Infrasturcture
+namespace Demo.Todo.Infrastructure
 {
     public class TodoAutoMapperProfiles
     {

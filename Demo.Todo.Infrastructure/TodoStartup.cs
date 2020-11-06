@@ -1,6 +1,6 @@
 ﻿using Demo.Todo.Core.Interfaces;
-using Demo.Todo.Infrasturcture.Data;
-using Demo.Todo.Infrasturcture.Services;
+using Demo.Todo.Infrastructure.Data;
+using Demo.Todo.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -8,8 +8,9 @@ using System.Collections.Generic;
 using System.Text;
 using AutoMapper;
 using System.Runtime.CompilerServices;
+using Demo.SharedKernel.Data;
 
-namespace Demo.Todo.Infrasturcture
+namespace Demo.Todo.Infrastructure
 {
     public static class TodoStartup
     {
@@ -17,6 +18,8 @@ namespace Demo.Todo.Infrasturcture
         {
             //Add DbContext 
             services.AddDbContext<TodosContext>(options);
+
+            services.AddTransient<IDbContextMarker, TodosContext>();
 
             //Add Dependencies 
             services.AddTransient<ITodoService, TodoService>();

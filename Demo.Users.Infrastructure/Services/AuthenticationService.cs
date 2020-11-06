@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.Users.Infrasturcture.Services
+namespace Demo.Users.Infrastructure.Services
 {
     public class AuthenticationService : IAuthenticationService
     {

@@ -2,7 +2,7 @@
 using Demo.SharedKernel.DTOs;
 using Demo.Todo.Core.DTOs;
 using Demo.Todo.Core.Interfaces;
-using Demo.Todo.Infrasturcture.Data;
+using Demo.Todo.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ using DTOs = Demo.Todo.Core.DTOs;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper.QueryableExtensions;
 
-namespace Demo.Todo.Infrasturcture.Services
+namespace Demo.Todo.Infrastructure.Services
 {
     public class TodoService : ITodoService
     {

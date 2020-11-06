@@ -1,12 +1,13 @@
-﻿using Demo.Users.Core.Entities;
+﻿using Demo.SharedKernel.Data;
+using Demo.Users.Core.Entities;
 using Demo.Users.Core.Interfaces;
-using Demo.Users.Infrasturcture.Data;
-using Demo.Users.Infrasturcture.Services;
+using Demo.Users.Infrastructure.Data;
+using Demo.Users.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Demo.Users.Infrasturcture
+namespace Demo.Users.Infrastructure
 {
     public static class UsersStartup
     {
@@ -14,6 +15,8 @@ namespace Demo.Users.Infrasturcture
         {
             //Add DbContext 
             services.AddDbContext<UsersContext>(options);
+
+            services.AddTransient<IDbContextMarker, UsersContext>();
 
             services.AddIdentity<AspNetUsers, AspNetRoles>(options =>
              {

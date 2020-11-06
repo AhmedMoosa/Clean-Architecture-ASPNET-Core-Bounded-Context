@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Demo.Todo.Infrasturcture;
+using Demo.Todo.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Demo.Users.Infrasturcture;
+using Demo.Users.Infrastructure;
 using Demo.Web.Api;
 using Microsoft.Extensions.Configuration;
 using AutoMapper;
@@ -22,14 +22,22 @@ namespace Demo.Web
             //Add Users
             services.AddUsers(options =>
             {
-                options.UseSqlServer(connectionString);
+                options.UseSqlServer(connectionString, op =>
+                 {
+                     op.MigrationsAssembly("Demo.Users.Infrastructure");
+                     op.MigrationsHistoryTable("__EFMigrationsHistroy", "Users");
+                 });
             } /*, autoMapperProfileAssemblies */);
 
 
             //Add Todo
             services.AddTodo(options =>
             {
-                options.UseSqlServer(connectionString);
+                options.UseSqlServer(connectionString, op =>
+                 {
+                     op.MigrationsAssembly("Demo.Todo.Infrastructure");
+                     op.MigrationsHistoryTable("__EFMigrationsHistroy", "Todo");
+                 });
             }, autoMapperProfileAssemblies);
 
 
