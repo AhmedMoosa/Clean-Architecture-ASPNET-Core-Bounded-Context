@@ -5,6 +5,9 @@
 - Clean Architecture Design
 - ASP.NET Core 3.1
 - Entity Framework Core
+- ASP.NET Identity Core
+- JWT (JSON Web Token) & Authentication
+- ASP.NET Core API
 - CRUD Operations
 - Repository Pattern
 - Dependency Injection
